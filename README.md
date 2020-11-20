@@ -1,0 +1,2 @@
+# botlist
+GELİSMİS BOTLİST ALTYAPISI
