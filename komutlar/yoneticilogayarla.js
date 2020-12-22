@@ -9,16 +9,18 @@ const embed = new Discord.RichEmbed()
 .setColor('RED')
 .setDescription('**Yetkili Log kanalını ayarlamak için `Yönetici` İznine sahip olmalısın!')
 return message.channel.send(embed)
-}
+}  ///Ardééks xfixxy
+
 let kinal = db.fetch(`hgK2_${message.guild.id}`)
-if(db.has(`hgK2_${message.guild.id}`)) {
+if(db.has(`hgK2_${message.guild.id}`)) {  ///Ardééks xfixxy
+
 const embed = new Discord.RichEmbed()
 .setColor('BLUE')
 .setDescription(`**Yetkili Log kanalı <#${kinal}> kanalına ayarlı! \nKapatmak için** \`${ayarlar.prefix}yetkili-log-kapat\``)
 return message.channel.send(embed)
 }
 let kanal = message.mentions.channels.first();
-  
+  ///Ardééks xfixxy
 if(!kanal) {
 const embed = new Discord.RichEmbed()
 .setColor('RED')
@@ -29,13 +31,15 @@ db.set(`hgK2_${message.guild.id}`, kanal.id);
 const embed = new Discord.RichEmbed()
 .setColor('GREEN')
 .setDescription(`**Yetkili Log kanalını ${kanal} olarak ayarlandı!**`)   
-message.channel.send(embed)                                                                                                                                      
+message.channel.send(embed)                    ///Ardééks xfixxy
+                                                                                                                    
 }; // Darkcode
 exports.conf = {
 enabled: true,
 guildOnly: false,
 aliases: ['yetkililogkanal','yetkili-log'],
-permLevel: 0
+permLevel: 0  ///Ardééks xfixxy
+
 };
 exports.help = {
 name: 'yetkili-log-kanal',
