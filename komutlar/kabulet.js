@@ -17,28 +17,24 @@ exports.run = async (client, message, args) => {
   .then(msg => msg.delete(5000));
   let kanal = await db.fetch(`hgK_${message.guild.id}`); 
   if (!kanal) return;
-  const embed = new Discord.RichEmbed()
+  const embed = new Discord.MessageEmbed()
     .setColor("GREEN")
     .setDescription(`<@${botid}> isimli bot başarıyla onaylandı!`);
   message.channel.send(embed).then(msg => msg.delete(5000));
-  const embed2 = new Discord.RichEmbed()
+  const embed2 = new Discord.MessageEmbed()
   .setColor("GREEN")
   .setDescription(
     `:green_circle:| ${message.author} adlı yetkili tarafından <@${sahip}> adlı kullanıcının <@${botid}> adlı botu onaylandı!`);
-  client.channels.get(kanal).send(embed2); // Kanal ID
+  client.channels.cache.get(kanal).send(embed2); // Kanal ID
   let yetkilikanal = await db.fetch(`hgK2_${message.guild.id}`); 
   if (!yetkilikanal) return;
-  const yetkili = new Discord.RichEmbed()
+  const yetkili = new Discord.MessageEmbed()
   .setColor("GREEN")
   .setTitle("Onaylandı")
   .setDescription(`**Yetkili**:\n${message.author}\n**Bot Sahibi**:\n<@${sahip}>\n**Davet Linkleri**:\n[Perm 0](https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=0) | [Perm 8](https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=8)`)
-  client.channels.get(yetkilikanal).send(yetkili);
+  client.channels.cache.get(yetkilikanal).send(yetkili);
 };
 
- //youtube.com/linlords
-//teşekkürler AloneDesign
-
-//linlordscode.com
 
 exports.conf = {
   enabled: true,
