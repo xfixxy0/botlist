@@ -30,7 +30,7 @@ const embed = new Discord.RichEmbed()
 .setColor('GREEN')
 .setDescription(`**Yetkili Log kanalını ${kanal} olarak ayarlandı!**`)   
 message.channel.send(embed)                                                                                                                                      
-}; // Astarius Code Share
+}; // Darkcode
 exports.conf = {
 enabled: true,
 guildOnly: false,
@@ -41,4 +41,4 @@ exports.help = {
 name: 'yetkili-log-kanal',
 description: 'Hoşgeldin kanalını ayarlamaya yarar.',
 usage: 'giriş-kanal #kanal'
-};// Bu altyapı AloneDesign'e aittir.
+};// Bu altyapı Ardeeks aittir.
