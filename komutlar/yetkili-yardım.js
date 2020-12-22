@@ -5,7 +5,7 @@ const db = require ('quick.db')
 exports.run = async (client, message, args) => {
 const embed = new Discord.MessageEmbed()
 .setColor('GREEN')
-.setTitle('Quadron » Yetkili Komutlar')
+.setTitle('BotAdınızıyazın » Yetkili Komutlar')
 .setTimestamp()
 .addField(`• ${PREFIX}log **#kanal**`,`Bot başvuru,kabul,red kanaln belirler.`)
 .addField(`• ${PREFIX}log-kapat`,`Logu kapatır.`)
