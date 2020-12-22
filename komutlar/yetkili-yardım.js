@@ -3,7 +3,7 @@ const ayarlar = require('../ayarlar.json')
 var PREFIX = ayarlar.prefix
 const db = require ('quick.db')
 exports.run = async (client, message, args) => {
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
 .setColor('GREEN')
 .setTitle('Quadron » Yetkili Komutlar')
 .setTimestamp()
@@ -14,7 +14,7 @@ const embed = new Discord.RichEmbed()
 .addField(`• ${PREFIX}yetkili-kapat`,`Yetkili logunu kapatır.`)
 .addField(`• ${PREFIX}kabul **<sahipID>** **<botID>**`,`Bot başvuru onaylarsınz.`)
 .addField(`• ${PREFIX}reddet **<sahipID>** **<sebep>**` ,`Bot başvuru reddersiniz.`)
-.setFooter('© 2020  Quadron')
+.setFooter('© 2020  Sa')
 .setTimestamp()
 message.channel.send(embed)
 };
