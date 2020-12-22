@@ -5,14 +5,14 @@ const ayarlar = require('../ayarlar.json')
 exports.run = async (client, message, args) => {
   
 if(!message.member.hasPermission("ADMINISTRATOR")) {
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
 .setColor('RED')
 .setDescription('**Log kanalını ayarlamak için `Yönetici` İznine sahip olmalısın!')
 return message.channel.send(embed)
 }
 let kinal = db.fetch(`hgK_${message.guild.id}`)
 if(db.has(`hgK_${message.guild.id}`)) {
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
 .setColor('BLUE')
 .setDescription(`**Log kanalı <#${kinal}> kanalına ayarlı! \nKapatmak için** \`${ayarlar.prefix}log-kanal-kapat\``)
 return message.channel.send(embed)
@@ -20,17 +20,16 @@ return message.channel.send(embed)
 let kanal = message.mentions.channels.first();
   
 if(!kanal) {
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
 .setColor('RED')
 .setDescription(`**Log kanalın etiketlemedin! \`Doğru kullanım: ${ayarlar.prefix}log-kanal #kanal\`**`)
 return message.channel.send(embed)
 }
 db.set(`hgK_${message.guild.id}`, kanal.id);
- //youtube.com/linlords
-//teşekkürler AloneDesign
 
-//linlordscode.com
-const embed = new Discord.RichEmbed()
+  ///https://victorycode.cf/
+  
+const embed = new Discord.MessageEmbed()
 .setColor('GREEN')
 .setDescription(`**Log kanalını ${kanal} olarak ayarlandı!**`)   
 message.channel.send(embed)                                                                                                                                      
