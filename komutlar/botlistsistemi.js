@@ -2,9 +2,9 @@ const discord = require("discord.js");
 const { prefix } = require("../ayarlar.json");
 
 module.exports.run = async (bot, message, args) => {
-  let embed = new discord.RichEmbed()
+  let embed = new discord.MessageEmbed()
     .setColor("RANDOM")
-    .setThumbnail(bot.user.avatarURL)
+    .setThumbnail(bot.user.avatarURL())
     .setTitle(`${bot.user.username} BotList Menüsü`)
     .addField(`${prefix}onayla <sahipid> <botid>`, "Botu Kabul Eder")
     .addField(`${prefix}reddet <botsahip id> <nedeni>`, "Üyenin Botunu Reddedir")
