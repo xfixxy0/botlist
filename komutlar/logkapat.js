@@ -4,19 +4,19 @@ const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message, args) => {
 if(!message.member.hasPermission("ADMINISTRATOR")) {
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
 .setColor('RED')
 .setDescription('**Log kanalını ayarlamak için `Yönetici` İznine sahip olmalısın!')
 return message.channel.send(embed)
 } 
-db.get(`hgK_${message.guild.id}`)
+db.cache.get(`hgK_${message.guild.id}`)
   db.delete(`hgK_${message.guild.id}`);
 
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
 .setColor('GREEN')
 .setDescription(`**Log kanalı silindi!**`)   
 message.channel.send(embed)                                                                                                                                      
-}; // Astarius Code Share
+}; // xFixxy
 exports.conf = {
 enabled: true,
 guildOnly: false,
