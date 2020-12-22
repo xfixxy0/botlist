@@ -17,7 +17,7 @@ db.delete(`hgK3_${message.guild.id}`)
 
 let kinal = db.fetch(`hgK3_${message.guild.id}`)
 if(db.has(`hgK3_${message.guild.id}`)) {
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
 .setColor('BLUE')
 .setDescription(`**Botekleme  kanalı <#${kinal}> kanalına ayarlı! \nKapatmak için** \`${ayarlar.prefix}botekle-log kapat\``)
 return message.channel.send(embed)
@@ -25,13 +25,13 @@ return message.channel.send(embed)
 let kanal = message.mentions.channels.first();
   
 if(!kanal) {
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
 .setColor('RED')
 .setDescription(`**Botekleme Log kanalın etiketlemedin! \`Doğru kullanım: ${ayarlar.prefix}botekle-log-kanal #kanal\`**`)
 return message.channel.send(embed)
 }
 db.set(`hgK3_${message.guild.id}`, kanal.id);
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
 .setColor('GREEN')
 .setDescription(`**Botekleme kanalını ${kanal} olarak ayarlandı!**`)   
 message.channel.send(embed)                                                                                                                                      
