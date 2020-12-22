@@ -29,4 +29,4 @@ exports.conf = {
 }
 exports.help = {
   name: 'botlist-yetkili-rol'
-}
+} //sa
