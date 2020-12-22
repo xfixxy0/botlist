@@ -52,10 +52,7 @@ exports.conf = {
   PermLevel: 0
 };
 
- //youtube.com/linlords
-//teşekkürler AloneDesign
 
-//linlordscode.com
 
 exports.help = {
   name: "botekle",
