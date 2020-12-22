@@ -17,26 +17,26 @@ const sebep = args.slice(1).join(" ");
       .then(msg => msg.delete(5000));
   let kanal = await db.fetch(`hgK_${message.guild.id}`); 
   if (!kanal) return;
-  const embed = new Discord.RichEmbed()
+  const embed = new Discord.MessageEmbed()
     .setColor("RED")
     .setDescription(`<@${sahip}> kullanıcının botu başarıyla reddedildi!`);
   message.channel.send(embed).then(msg => msg.delete(5000));
-  const embed3 = new Discord.RichEmbed()
+  const embed3 = new Discord.MessageEmbed()
   .setColor("RED")
   .setDescription(`Botunuz ${sebep} sebebinden reddedildi!`)
-  const embed2 = new Discord.RichEmbed()
+  const embed2 = new Discord.MessageEmbed()
   .setColor("RED")
   .setDescription(
     `:red_circle: | ${message.author} adlı yetkili tarafından <@${sahip}> adlı kullanıcının botu \`${sebep}\` sebebinden dolayı reddedldi!`
   );
-  client.channels.get(kanal).send(embed2); // Kanal ID
+  client.channels.cache.get(kanal).send(embed2); // Kanal ID
   let yetkilikanal = await db.fetch(`hgK2_${message.guild.id}`); 
   if (!yetkilikanal) return;
-  const yetkili = new Discord.RichEmbed()
+  const yetkili = new Discord.MessageEmbed()
   .setColor("RED")
   .setTitle("Reddedildi")
   .setDescription(`**Yetkili**\n${message.author}\n**Bot Sahibi**\n<@${sahip}>\n**Sebep**\n${sebep}`)
-  client.channels.get(yetkilikanal).send(yetkili);
+  client.channels.cache.get(yetkilikanal).send(yetkili);
 };
 exports.conf = {
   enabled: true,
@@ -44,11 +44,7 @@ exports.conf = {
   aliases: [],
   PermLevel: 0
 };
-
- //youtube.com/linlords
-//teşekkürler AloneDesign
-
-//linlordscode.com
+//PEYNİR // XFİXXY
 
 exports.help = {
   name: "reddet",
